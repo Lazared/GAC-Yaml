@@ -32,7 +32,8 @@ paths:
             application/json:
               schema:
                 allOf:
-                  - description: 'Successs response , needs to be accompanied by an X-Trace object'
+                  - description: |
+                      'Successs response , needs to be accompanied by an X-Trace object'
                     type: object
                     title: success.v1.json
                     properties:

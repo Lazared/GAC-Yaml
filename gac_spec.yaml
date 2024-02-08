@@ -18,11 +18,9 @@ info:
     url: 'https://gac.com/api-license.html'
 servers:
   - url: 'https://online.globalairportconcierge.com/'
-    description: |
-    ## Live Server
+    description: Live Server
   - url: 'https://mock.globalairportconcierge.com/'
-    description: |
-    ## Mock Server
+    description: Mock Server
 paths:
   /bookings:
     get:

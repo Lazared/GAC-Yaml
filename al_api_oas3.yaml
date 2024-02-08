@@ -1,0 +1,2358 @@
+openapi: 3.0.1
+info:
+  title: Quickbook API
+  version: v3
+servers:
+- url: /
+paths:
+  /quote/time:
+    post:
+      description: This way to secure APIs should't be used in new specs.
+      operationId: hasErrorResponses_0
+      parameters:
+      - name: Authorization
+        in: header
+        description: API key
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/type'
+        required: false
+        x-amf-mediaType: application/json
+      responses:
+        "200":
+          description: ""
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  times:
+                  - service: standard_car
+                    eta: 00:20:00
+                  - service: large_car
+                    eta: 00:20:00
+          x-amf-mediaType: application/json
+        "400":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "403":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "404":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "405":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "406":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "415":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "500":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "502":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "504":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "520":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+      x-codegen-request-body-name: generated
+    x-amf-description: Get an arrival time quote for one or more services
+  /quote/time/{serviceCode}:
+    post:
+      description: This way to secure APIs should't be used in new specs.
+      operationId: hasErrorResponses_1
+      parameters:
+      - name: serviceCode
+        in: path
+        description: An unique service code pre-defined in Addison Lee.
+        required: true
+        schema:
+          type: string
+      - name: Authorization
+        in: header
+        description: API key
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/type_2'
+        required: false
+        x-amf-mediaType: application/json
+      responses:
+        "200":
+          description: ""
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  times:
+                  - service: standard_car
+                    eta: 00:20:00
+          x-amf-mediaType: application/json
+        "400":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "403":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "404":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "405":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "406":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "415":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "500":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "502":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "504":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "520":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+      x-codegen-request-body-name: generated
+    x-amf-description: Get an arrival time quote for a single service code.
+  /quote/price:
+    post:
+      description: This way to secure APIs should't be used in new specs.
+      operationId: hasErrorResponses_2
+      parameters:
+      - name: Authorization
+        in: header
+        description: API key
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/type_3'
+        required: false
+        x-amf-mediaType: application/json
+      responses:
+        "200":
+          description: ""
+          content:
+            application/json:
+              schema:
+                type: object
+                x-amf-examples:
+                  ASAP:
+                    request_id: 34782ea8-526c-4bde-925c-ab82c46265a6
+                    quotes:
+                    - quote_id: ebbff3b2-1748-4d5b-96c4-cf2ce2274d65
+                      service: standard_car
+                      total_price: 25.25
+                      price: 25.25
+                      discount: 0
+                      vat: 0
+                      currency: GBP
+                      eta: 00:10:00
+                    - quote_id: 3f8aed71-b32f-4fbf-a359-2d1bab1e02a9
+                      service: large_car
+                      total_price: 23
+                      price: 23
+                      discount: 0
+                      vat: 0
+                      currency: GBP
+                      eta: 00:10:00
+                  PREBOOK:
+                    request_id: 34782ea8-526c-4bde-925c-ab82c46265a6
+                    quotes:
+                    - quote_id: ebbff3b2-1748-4d5b-96c4-cf2ce2274d65
+                      service: standard_car
+                      total_price: 25.25
+                      price: 25.25
+                      discount: 0
+                      vat: 0
+                      currency: GBP
+                    - quote_id: 3f8aed71-b32f-4fbf-a359-2d1bab1e02a9
+                      service: large_car
+                      total_price: 23
+                      price: 23
+                      discount: 0
+                      vat: 0
+                      currency: GBP
+          x-amf-mediaType: application/json
+        "400":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "403":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "404":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "405":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "406":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "415":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "500":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "502":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "504":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "520":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+      x-codegen-request-body-name: generated
+    x-amf-description: Get a price and arrival time quote
+  /quote/price/{serviceCode}:
+    post:
+      description: This way to secure APIs should't be used in new specs.
+      operationId: hasErrorResponses_3
+      parameters:
+      - name: serviceCode
+        in: path
+        description: This is a pre-defined service code in Addison Lee.
+        required: true
+        schema:
+          type: string
+      - name: Authorization
+        in: header
+        description: API key
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/type_4'
+        required: false
+        x-amf-mediaType: application/json
+      responses:
+        "200":
+          description: ""
+          content:
+            application/json:
+              schema:
+                type: object
+                x-amf-examples:
+                  ASAP:
+                    request_id: 2c2b9b46-1826-4f98-9678-9f136a11a006
+                    quotes:
+                    - quote_id: 93b82fc2-e5d2-4619-a78d-4c335568519c
+                      service: standard_car
+                      total_price: 39.95
+                      price: 39.95
+                      discount: 0
+                      vat: 0
+                      currency: GBP
+                      eta: 00:10:00
+                  PREBOOK:
+                    request_id: 2c2b9b46-1826-4f98-9678-9f136a11a006
+                    quotes:
+                    - quote_id: 93b82fc2-e5d2-4619-a78d-4c335568519c
+                      service: standard_car
+                      total_price: 39.95
+                      price: 39.95
+                      discount: 0
+                      vat: 0
+                      currency: GBP
+          x-amf-mediaType: application/json
+        "400":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "403":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "404":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "405":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "406":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "415":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "500":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "502":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "504":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "520":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+      x-codegen-request-body-name: generated
+    x-amf-description: Get the quote price for an unique service code.
+  /booking/create:
+    post:
+      description: All requests that require api key
+      operationId: hasErrorResponses_4
+      parameters:
+      - name: Authorization
+        in: header
+        description: API key
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/type_5'
+        required: false
+        x-amf-mediaType: application/json
+      responses:
+        "200":
+          description: ""
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  job_uuid: 68976135-3a66-4547-a499-347fb8fec4d5
+                  job_number: "358031"
+                  booking_status: booked
+          x-amf-mediaType: application/json
+        "400":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "403":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "404":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "405":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "406":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "415":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "500":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "502":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "504":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "520":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+      x-codegen-request-body-name: generated
+    x-amf-description: Create a new booking
+  /booking/amend:
+    post:
+      description: This way to secure APIs should't be used in new specs.
+      operationId: hasErrorResponses_5
+      parameters:
+      - name: Authorization
+        in: header
+        description: API key
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/type_6'
+        required: false
+        x-amf-mediaType: application/json
+      responses:
+        "200":
+          description: ""
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  job_uuid: e4e9df8e-58c8-432b-9dcb-f751ac89008d
+                  job_number: "325835"
+                  booking_status: amended
+          x-amf-mediaType: application/json
+        "400":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "403":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "404":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "405":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "406":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "415":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "500":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "502":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "504":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "520":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+      x-codegen-request-body-name: generated
+    x-amf-description: Amend an existing booking
+  /booking/cancel:
+    post:
+      description: This way to secure APIs should't be used in new specs.
+      operationId: hasErrorResponses_6
+      parameters:
+      - name: Authorization
+        in: header
+        description: API key
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/type_7'
+        required: false
+        x-amf-mediaType: application/json
+      responses:
+        "200":
+          description: ""
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  job_uuid: a9cf4bb7-57e1-466a-ae77-c62f2cc84a01
+                  job_number: "357891"
+                  cancelled: true
+                  cancellation_fee: false
+                  total: 0
+                  tax: 0
+          x-amf-mediaType: application/json
+        "400":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "403":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "404":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "405":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "406":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "415":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "500":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "502":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "504":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "520":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+      x-codegen-request-body-name: generated
+    x-amf-description: Cancel an existing booking
+  /booking/detail:
+    get:
+      description: This way to secure APIs should't be used in new specs.
+      operationId: hasErrorResponses_7
+      parameters:
+      - name: job_uuid
+        in: query
+        description: Universally unique job identifier provided in the booking/create
+          response message
+        required: true
+        schema:
+          pattern: "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$"
+          type: string
+      - name: Authorization
+        in: header
+        description: API key
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          description: ""
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  result: ok
+                  booking:
+                    uuid: f552cf33-b09e-4689-966d-08454060ab46
+                    number: "848071"
+                    reference: HF76109
+                    asap: true
+                    date: 2019-10-10T09:30:00+01:00
+                    service: standard_car
+                    status: BOOKED
+                    price:
+                      total: 78
+                      vat: 7.8
+                      currency: GBP
+                    stops:
+                    - address: "London Heathrow Airport, London, EN, GB"
+                      latitude: 51.47138888
+                      longitude: -0.45277777
+                      notes: Meet at arrivals
+                      airport:
+                        iata: LHR
+                        terminal: "2"
+                        flight_number: BA714
+                    - address: "ExCel London, One Western Gateway, Royal Victoria\
+                        \ Dock, London, E16 1XL, UK"
+                      latitude: 51.50943
+                      longitude: 0.03996
+                      notes: West entrance
+                    driver:
+                      name: Harrison Smith
+                      telephone: "01771503953"
+                      vehicle_type: Ford Galaxy
+                      vehicle_reg: LG63UKX
+          x-amf-mediaType: application/json
+        "400":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "403":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "404":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "405":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "406":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "415":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "500":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "502":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "504":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "520":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+    x-amf-description: Get details of an existing booking
+  /products:
+    get:
+      description: This way to secure APIs should't be used in new specs.
+      operationId: hasErrorResponses_8
+      parameters:
+      - name: account
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: lat
+        in: query
+        schema:
+          type: string
+      - name: long
+        in: query
+        schema:
+          type: string
+      - name: postcode
+        in: query
+        schema:
+          type: string
+      - name: type
+        in: query
+        schema:
+          type: string
+      - name: Authorization
+        in: header
+        description: API key
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          description: ""
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  services:
+                  - standard_car
+                  - large_car
+                  - exec_car_platinum
+                  - exec_car
+                  - exec_large_car
+                  - exec_s_class_car
+                  - exec_large_car_platinum
+                  - local_partner
+                  - local_partner_plus
+                  - cycle_cab
+                  - pet_friendly_car
+                  - wheelchair_accessible_car
+                  - exec_estate_car
+                  - parcel_car
+                  - bicycle_courier
+                  - motorcycle_courier
+                  - small_van
+                  - large_van
+                  - luton_van
+                  - direct_motorcycle_courier
+                  - direct_small_van
+                  - direct_large_van
+                  - direct_parcel_car
+                  - coach_booking
+                  - overnight_deliveries
+                  - international_rates
+                  - overnight_bike_deliveries
+                  - overnight_small_van_deliveries
+                  - overnight_transit_van_deliveries
+                  - helper
+                  - overnight_parcel_deliveries
+                  - on_site_coordinator
+                  - wedding_car
+                  - nhs_select
+                  - black_taxi
+                  - al_request_passenger
+                  - al_request_parcel
+                  - al_now_parcel
+                  - black_taxi_assisted
+          x-amf-mediaType: application/json
+        "400":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "403":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "404":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "405":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "406":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "415":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "500":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "502":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "504":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "520":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+    x-amf-description: Get all products available at addisonlee
+  /products/details:
+    get:
+      description: This way to secure APIs should't be used in new specs.
+      operationId: hasErrorResponses_9
+      parameters:
+      - name: code
+        in: query
+        schema:
+          type: string
+      - name: Authorization
+        in: header
+        description: API key
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          description: ""
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  service:
+                    code: large_car
+                    name: Select+
+                    description: Everyday choice and comfort -  professional driver
+                      and MPV/people carrier for up to 6 people.
+                    image: ""
+                    type: passenger
+                    passengers: 4
+                    luggage: 2
+          x-amf-mediaType: application/json
+        "400":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "403":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "404":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "405":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "406":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "415":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "500":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "502":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "504":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "520":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+    x-amf-description: Get particular product details
+  /product/{accountNumber}:
+    get:
+      description: Get products by acount number
+      operationId: hasErrorResponses_10
+      parameters:
+      - name: accountNumber
+        in: path
+        required: true
+        schema:
+          type: number
+      - name: Authorization
+        in: header
+        description: API key
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          description: ""
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  services:
+                  - id: a1111c8c-c720-46c3-8534-2fcdd730040d
+                    code: standard_car
+                    name: Select
+                    description: Everyday choice and comfort - professional driver
+                      and medium car for up to 4 people and 2 large bags (TBS Base)
+                    image: https://static.addisonlee.com/product_catalogue/uk/default/select/
+                    type: PASSENGER
+                    capacity:
+                      passengers: 2
+                      luggage: 4
+                      bicycle: false
+          x-amf-mediaType: application/json
+        "400":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "403":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "404":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "405":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "406":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "415":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "500":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "502":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "504":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "520":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+  /product/{accountNumber}/{productsType}:
+    get:
+      description: Get products by products type
+      operationId: hasErrorResponses_11
+      parameters:
+      - name: accountNumber
+        in: path
+        required: true
+        schema:
+          type: number
+      - name: productsType
+        in: path
+        required: true
+        schema:
+          type: string
+          enum:
+          - passenger
+          - courier
+      - name: Authorization
+        in: header
+        description: API key
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          description: ""
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  services:
+                  - id: ca328f3b-e034-4b9f-b2a8-bf4bb17b6b86
+                    code: parcel_car
+                    name: Parcel
+                    description: For items that will fit in a car boot
+                    image: https://static.addisonlee.com/products/uk/london/parcel_car/
+                    type: DELIVERY
+                    capacity:
+                      parcel_weight: 20
+                      parcel_size: Large Suitcase
+          x-amf-mediaType: application/json
+        "400":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "403":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "404":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "405":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "406":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "415":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "500":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "502":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "504":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "520":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+  /product/{accountNumber}/{productsType}/location:
+    get:
+      description: retrive avalable service for the given geo location or post code.
+      operationId: hasErrorResponses_12
+      parameters:
+      - name: lat
+        in: query
+        description: latitude for geo location
+        schema:
+          type: string
+      - name: long
+        in: query
+        description: Longtude for geo location
+        schema:
+          type: string
+      - name: postCode
+        in: query
+        description: postal code for geo location
+        schema:
+          type: string
+      - name: accountNumber
+        in: path
+        required: true
+        schema:
+          type: number
+      - name: productsType
+        in: path
+        required: true
+        schema:
+          type: string
+          enum:
+          - passenger
+          - courier
+      - name: Authorization
+        in: header
+        description: API key
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          description: ""
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  services:
+                  - id: a1111c8c-c720-46c3-8534-2fcdd730040d
+                    code: standard_car
+                    serviceCode: C
+                    name: Select
+                    description: Everyday choice and comfort - professional driver
+                      and medium car for up to 4 people and 2 large bags (TBS Base)
+                    image: https://static.addisonlee.com/product_catalogue/uk/default/select/
+                    type: PASSENGER
+                    capacity:
+                      passengers: 2
+                      luggage: 4
+                      bicycle: false
+                    brand:
+                      name: AddisonLee
+                      code: addisonlee
+                      image: https://static.addisonlee.com/partners/addisonlee/
+                    supportsAsap: true
+                    supportsAdvanced: true
+                    availability:
+                      available: true
+                      leadTime: 00:35:00
+          x-amf-mediaType: application/json
+        "400":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "403":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "404":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "405":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "406":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "415":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "500":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "502":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "504":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+        "520":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_1'
+          x-amf-mediaType: application/json
+components:
+  schemas:
+    type:
+      title: QuoteTimeRequest
+      required:
+      - locations
+      - services
+      type: object
+      properties:
+        locations:
+          type: array
+          items:
+            $ref: '#/components/schemas/type_8'
+        services:
+          uniqueItems: true
+          type: array
+          items:
+            $ref: '#/components/schemas/type_9'
+      additionalProperties: true
+      example:
+        services:
+        - code: standard_car
+        - code: large_car
+        locations:
+        - long: -0.17348393471707174
+          lat: 51.56611540292955
+    type_1:
+      title: Error Response
+      required:
+      - code
+      - message
+      - reference_id
+      - status
+      type: object
+      properties:
+        status:
+          type: string
+          description: HTTP status code
+        code:
+          type: string
+          description: Error code
+        message:
+          type: string
+          description: Short general error description
+        description:
+          type: string
+          description: Detailed description of the error
+        reference_id:
+          type: string
+          description: Transaction ID to trace the messages
+      description: The message that is sent back upon error
+      x-amf-examples:
+        example_2:
+          status: "406"
+          code: NOT_ACCEPTABLE
+          message: "API contract violation, please check the API documentation"
+          description: The expected media type for method and resource  is application/xml.
+          reference_id: d441a04c-0bd6-468f-bce2-2b84c4621e3d
+        amf_example_1:
+          status: "400"
+          code: BAD_REQUEST
+          message: Generic Message
+          description: Detailed Message
+          reference_id: fe37194e-f830-4a3a-8168-3a4c9af6c083
+        example_1:
+          status: "405"
+          code: METHOD_NOT_ALLOWED
+          message: "API contract violation, please check the API documentation"
+          description: The http method is not allowed for the resource.
+          reference_id: 9d4a8404-2aec-49df-942c-8efa0a186f42
+        amf_example_5:
+          status: "415"
+          code: UNSUPPORTED_MEDIA_TYPE
+          message: "API contract violation, please check the API documentation"
+          description: The media type is not supported for method and resource.
+          reference_id: 5805009e-6c13-476a-8c99-2cc7c9cf0dab
+        amf_example_2:
+          status: "403"
+          code: FORBIDDEN
+          message: Generic Message
+          description: Detailed Message
+          reference_id: fe37194e-f830-4a3a-8168-3a4c9af6c083
+        example_4:
+          status: "520"
+          code: BACKEND_ERROR
+          message: Unexpected error occurred in the backend service.
+          reference_id: 00366495-e705-4caa-82d6-33c84d49f39a
+        amf_example_4:
+          status: "500"
+          code: INTERNAL_SERVER_ERROR
+          message: Unable to fulfil request due to internal error.
+          reference_id: 3a015fc1-d613-4278-b805-af01658c7034
+        example_0:
+          status: "404"
+          code: RESOURCE_NOT_FOUND
+          message: "API contract violation, please check the API documentation"
+          description: No matching patterns for URI.
+          reference_id: 390b9842-cddf-42fa-8afc-2baf61b215e1
+        amf_example_3:
+          status: "504"
+          code: GATEWAY_TIMEOUT
+          message: Unable to connect to upstream service.
+          description: Request timed out.
+          reference_id: e26bfc0c-bcda-4c45-908e-7a98531f66ae
+        example_3:
+          status: "502"
+          code: BAD_GATEWAY
+          message: Upstream service unable to fulfil request.
+          reference_id: 85883fa7-d483-403b-a3a5-12041560fc7e
+    type_2:
+      title: QuoteTimeSingleServiceRequest
+      required:
+      - locations
+      type: object
+      properties:
+        locations:
+          type: array
+          items:
+            $ref: '#/components/schemas/type_8'
+      additionalProperties: true
+      example:
+        locations:
+        - long: -0.17088449560372712
+          lat: 51.46813836444159
+    type_3:
+      title: QuotePriceRequest
+      required:
+      - locations
+      - payment_method
+      - services
+      type: object
+      properties:
+        payment_method:
+          title: PaymentMethod
+          type: string
+          description: Payment method of the booking
+          enum:
+          - Account
+          - MultiAccount
+          - Cash
+        account:
+          title: Account
+          required:
+          - number
+          type: object
+          properties:
+            number:
+              type: object
+              description: The number of the account.
+              x-amf-union:
+              - type: string
+              - type: number
+          description: The account number. Mandatory when payment_method is MultiAccount
+        locations:
+          type: array
+          items:
+            $ref: '#/components/schemas/type_8'
+        services:
+          uniqueItems: true
+          type: array
+          items:
+            $ref: '#/components/schemas/type_9'
+        promo_code:
+          type: string
+          description: Promotional code for the journey
+        pickup_dt?:
+          type: string
+          description: Date time when job is expected to start. If absent the job
+            is expected to start ASAP.
+          format: date-time
+      additionalProperties: true
+      x-amf-examples:
+        ASAP:
+          payment_method: Account
+          services:
+          - code: standard_car
+          - code: large_car
+          locations:
+          - long: -0.209702
+            lat: 51.497129
+          - long: -0.180358
+            lat: 51.541839
+        PREEBOK:
+          pickup_dt: 2019-10-01T09:00:00+01:00
+          payment_method: Account
+          services:
+          - code: standard_car
+          - code: large_car
+          locations:
+          - long: -0.209702
+            lat: 51.497129
+          - long: -0.180358
+            lat: 51.541839
+        MULTIACCOUNT:
+          payment_method: MultiAccount
+          account:
+            number: "477601"
+          services:
+          - code: standard_car
+          - code: large_car
+          locations:
+          - long: -0.209702
+            lat: 51.497129
+          - long: -0.180358
+            lat: 51.541839
+    type_4:
+      title: QuotePriceNoServices
+      required:
+      - locations
+      - payment_method
+      type: object
+      properties:
+        pickup_dt?:
+          type: string
+          description: Date time when job is expected to start. If absent the job
+            is expected to start ASAP.
+          format: date-time
+        payment_method:
+          title: PaymentMethod
+          type: string
+          description: Payment method of the booking
+          enum:
+          - Account
+          - MultiAccount
+          - Cash
+        account:
+          title: Account
+          required:
+          - number
+          type: object
+          properties:
+            number:
+              type: object
+              description: The number of the account.
+              x-amf-union:
+              - type: string
+              - type: number
+          description: The account number. Mandatory when payment_method is MultiAccount
+        locations:
+          type: array
+          items:
+            $ref: '#/components/schemas/type_8'
+        promo_code:
+          type: string
+          description: Promotional code for the journey
+      additionalProperties: true
+      x-amf-examples:
+        ASAP:
+          payment_method: Account
+          locations:
+          - long: -0.209702
+            lat: 51.497129
+          - long: -0.180358
+            lat: 51.541839
+        PREEBOK:
+          pickup_dt: 2019-10-01T09:00:00+01:00
+          payment_method: Account
+          locations:
+          - long: -0.209702
+            lat: 51.497129
+          - long: -0.180358
+            lat: 51.541839
+        MULTIACCOUNT:
+          payment_method: MultiAccount
+          account:
+            number: "477601"
+          locations:
+          - long: -0.072292
+            lat: 51.51742
+          - long: -0.173707
+            lat: 51.575255
+    type_5:
+      title: BookingWithoutPreviousQuote
+      required:
+      - contact
+      - passengers
+      - payment_method
+      - service
+      type: object
+      properties:
+        information:
+          title: Information
+          type: array
+          description: Collection of extra information about the booking.
+          items:
+            $ref: '#/components/schemas/type_11'
+        quote_id:
+          title: Quote ID
+          pattern: "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$"
+          type: string
+          description: The quote unique identifier. Mandatory if booking using quote.
+          example: b5f2dd34-7c2d-45c7-a695-57509a74a68b
+        payment_method:
+          title: Payment Method
+          type: string
+          description: The booking payment method.
+          enum:
+          - Account
+          - MultiAccount
+          - Cash
+        contact:
+          $ref: '#/components/schemas/type_10'
+        references:
+          title: References
+          type: array
+          items:
+            $ref: '#/components/schemas/type_12'
+        account:
+          title: Account
+          required:
+          - number
+          type: object
+          properties:
+            number:
+              type: object
+              description: The number of the account.
+              x-amf-union:
+              - type: string
+              - type: number
+          description: The account number. Mandatory when payment_method is MultiAccount
+        partner_reference:
+          title: Partner Reference
+          required:
+          - booking
+          type: object
+          properties:
+            booking:
+              title: Booking
+              required:
+              - id
+              type: object
+              properties:
+                id:
+                  type: string
+                  description: The id of the booking in the Partner System
+                number:
+                  type: object
+                  description: The booking number in the Partner System
+                  x-amf-union:
+                  - type: number
+                  - type: string
+              description: Booking Details from the Partner System
+        locations:
+          title: Locations
+          type: array
+          description: The booking stops locations. Mandatory for direct booking.
+            Ignored when booking using quote
+          items:
+            $ref: '#/components/schemas/type_8'
+        passengers:
+          title: Passengers
+          type: array
+          items:
+            $ref: '#/components/schemas/type_10'
+        pickup_dt:
+          title: Pickup Date
+          type: string
+          description: Specify the booking date and time. If not presente booking
+            is quoted as ASAP.
+          format: date-time
+        request_id:
+          title: Request ID
+          pattern: "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$"
+          type: string
+          description: The request id for the quote. Mandatory if booking using quote.
+          example: b5f2dd34-7c2d-45c7-a695-57509a74a68b
+        service:
+          title: Service
+          type: string
+      additionalProperties: true
+      x-amf-examples:
+        DIRECT:
+          value:
+            pickup_dt: 2019-10-01T09:00:00+01:00
+            promo_code: DISCOUNT10
+            payment_method: Account
+            service: standard_car
+            locations:
+            - lat: 51.527059
+              long: -0.140553
+              notes: Wait in the reception.
+            - street_address: "Heathrow Terminal 2, Heathrow Airport (LHR)"
+              source: Airport
+              lat: 51.469582
+              long: -0.449603
+              town: London
+              country: GB
+              postcode: TW6 2GW
+              airport:
+                iata: LHR
+                flight_number: BA1487
+                terminal: "2"
+                arrival_from: Paris
+            contact:
+              name: John Doe
+              mobile: "07123456789"
+              email: john.doe@example.com
+            passengers:
+            - name: Jane Doe
+              mobile: "07262555555"
+              email: jane.doe@example.com
+            - name: Jane Smith
+              mobile: "07123456789"
+              email: jane.smith@example.com
+            information:
+            - type: Notes
+              value: Special Instruction Notes
+            - type: Description
+              value: Addison Lee to Collect John Doe
+            partner_reference:
+              booking:
+                id: 9d8760a1-84cb-42d5-8887-f9574e75ede7
+                number: "345677"
+        WITH_QUOTE:
+          value:
+            pickup_dt: 2019-10-01T09:00:00+01:00
+            request_id: 616ed1b9-cf2f-4eec-bbdf-634368c9e070
+            quote_id: 110b2433-2002-4c70-8a10-374249fc63c1
+            promo_code: DISCOUNT10
+            payment_method: Account
+            service: standard_car
+            contact:
+              name: John Doe
+              mobile: "07123456789"
+              email: john.doe@example.com
+            passengers:
+            - name: Jane Doe
+              mobile: "07262555555"
+              email: jane.doe@example.com
+            - name: Jane Smith
+              mobile: "07123456789"
+              email: jane.smith@example.com
+            information:
+            - type: Notes
+              value: Special Instruction Notes
+            - type: Description
+              value: Addison Lee to Collect John Doe
+            partner_reference:
+              booking:
+                id: 9d8760a1-84cb-42d5-8887-f9574e75ede7
+                number: "345677"
+        MULTIACCOUNT:
+          value:
+            pickup_dt: 2019-10-01T09:00:00+01:00
+            promo_code: DISCOUNT10
+            payment_method: MultiAccount
+            account:
+              number: "477601"
+            service: standard_car
+            locations:
+            - lat: 51.527059
+              long: -0.140553
+              notes: Wait in the reception.
+            - street_address: "Heathrow Terminal 2, Heathrow Airport (LHR)"
+              source: Airport
+              lat: 51.469582
+              long: -0.449603
+              town: London
+              country: GB
+              postcode: TW6 2GW
+              airport:
+                iata: LHR
+                flight_number: BA1487
+                terminal: "2"
+                arrival_from: Paris
+            contact:
+              name: John Doe
+              mobile: "07123456789"
+              email: john.doe@example.com
+            passengers:
+            - name: Jane Doe
+              mobile: "07262555555"
+              email: jane.doe@example.com
+            - name: Jane Smith
+              mobile: "07123456789"
+              email: jane.smith@example.com
+            information:
+            - type: Notes
+              value: Special Instruction Notes
+            - type: Description
+              value: Addison Lee to Collect John Doe
+            partner_reference:
+              booking:
+                id: 9d8760a1-84cb-42d5-8887-f9574e75ede7
+                number: "345677"
+    type_6:
+      title: BookingAmendRequest
+      required:
+      - contact
+      - job_uuid
+      - passengers
+      - payment_method
+      - service
+      type: object
+      properties:
+        information:
+          title: Information
+          type: array
+          description: Collection of extra information about the booking.
+          items:
+            $ref: '#/components/schemas/type_11'
+        job_uuid:
+          title: Job UUID
+          pattern: "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$"
+          type: string
+          description: Universally unique job identifier provided in the booking/create
+            response message
+          example: b5f2dd34-7c2d-45c7-a695-57509a74a68b
+        payment_method:
+          title: Payment Method
+          type: string
+          description: The booking payment method.
+          enum:
+          - Account
+          - MultiAccount
+          - Cash
+        contact:
+          $ref: '#/components/schemas/type_10'
+        references:
+          title: References
+          type: array
+          items:
+            $ref: '#/components/schemas/type_12'
+        partner_reference:
+          title: Partner Reference
+          required:
+          - booking
+          type: object
+          properties:
+            booking:
+              title: Booking
+              required:
+              - id
+              type: object
+              properties:
+                id:
+                  type: string
+                  description: The id of the booking in the Partner System
+                number:
+                  type: object
+                  description: The booking number in the Partner System
+                  x-amf-union:
+                  - type: number
+                  - type: string
+              description: Booking Details from the Partner System
+        locations:
+          title: Locations
+          type: array
+          description: The booking stops locations. Mandatory for direct booking.
+            Ignored when booking using quote
+          items:
+            $ref: '#/components/schemas/type_8'
+        passengers:
+          title: Passengers
+          type: array
+          items:
+            $ref: '#/components/schemas/type_10'
+        pickup_dt:
+          title: Pickup Date
+          type: string
+          description: Specify the booking date and time. If not presente booking
+            is quoted as ASAP.
+          format: date-time
+        service:
+          title: Service
+          type: string
+      additionalProperties: true
+      example:
+        value:
+          job_uuid: 963b47ba-8b43-40b7-95c2-3347f17288db
+          pickup_dt: 2019-10-01T09:00:00+01:00
+          promo_code: DISCOUNT10
+          payment_method: Account
+          service: standard_car
+          locations:
+          - lat: 51.527059
+            long: -0.140553
+            notes: Wait in the reception.
+          - street_address: "Heathrow Terminal 2, Heathrow Airport (LHR)"
+            source: Airport
+            lat: 51.469582
+            long: -0.449603
+            town: London
+            country: GB
+            postcode: TW6 2GW
+            airport:
+              iata: LHR
+              flight_number: BA1487
+              terminal: "2"
+              arrival_from: Paris
+          contact:
+            name: John Doe
+            mobile: "07123456789"
+            email: john.doe@example.com
+          passengers:
+          - name: Jane Doe
+            mobile: "07262555555"
+            email: jane.doe@example.com
+          - name: Jane Smith
+            mobile: "07123456789"
+            email: jane.smith@example.com
+          information:
+          - type: Luggage
+            value: 4 big suitcases
+          - type: NameBoard
+            value: Addison Lee to Collect John Doe
+          partner_reference:
+            booking:
+              id: 9d8760a1-84cb-42d5-8887-f9574e75ede7
+              number: "345677"
+    type_7:
+      title: BookingCancelRequest
+      required:
+      - job_uuid
+      type: object
+      properties:
+        job_uuid:
+          title: Job UUID
+          pattern: "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$"
+          type: string
+          description: Universally unique job identifier provided in the booking/create
+            response message
+          example: b5f2dd34-7c2d-45c7-a695-57509a74a68b
+      additionalProperties: true
+      example:
+        job_uuid: 616ed1b9-cf2f-4eec-bbdf-634368c9e070
+    type_8:
+      title: Location
+      required:
+      - lat
+      - long
+      type: object
+      properties:
+        lat:
+          type: number
+        long:
+          type: number
+        notes:
+          type: string
+        street_address:
+          type: string
+        contact:
+          title: Contact
+          required:
+          - email
+          - mobile
+          - name
+          type: object
+          properties:
+            name:
+              minLength: 1
+              type: string
+              description: The name of the passenger
+            email:
+              type: string
+              description: Formatted email address.
+            mobile:
+              type: string
+              description: Formatted mobile phone number.
+          description: The Contact for location. Only used for Courier delivery.
+        name?:
+          type: string
+          description: "[DEPRECATED]"
+        address?:
+          type: string
+          description: "[DEPRECATED]"
+        town:
+          type: string
+          description: The town of the address. Mandatory for Street Addresses.
+        postcode:
+          type: string
+          description: The postcode of the address. Mandatory for Street Addresses.
+        country:
+          type: string
+          description: The country of the address. Mandatory for Street Addresses.
+        source:
+          type: string
+          description: The source of the address. Can have any value for street addresses
+            but must be 'Airport' for airport addresses If not provided all the address
+            component will be discarded and the address will be resolved from lat/long.
+        airport:
+          title: Airport
+          required:
+          - iata
+          type: object
+          properties:
+            terminal:
+              type: object
+              x-amf-union:
+              - type: string
+              - type: number
+              - type: "null"
+            flight_number:
+              minLength: 1
+              type: string
+            arrival_from:
+              minLength: 1
+              type: string
+              description: The City where the flight is coming from
+            arrival:
+              type: string
+              description: "[DEPRECATED] Use arrival_from instead"
+            iata:
+              minLength: 1
+              type: string
+          description: The airport information. Mandatory when source is 'Airport'.
+      x-amf-examples:
+        LatLongAddress:
+          street_address: 39 BUCKINGHAM PALACE RD
+          lat: 51.498233
+          long: -0.143448
+          notes: ""
+        StreetAddress:
+          street_address: 39 BUCKINGHAM PALACE RD
+          source: Address
+          lat: 51.498233
+          long: -0.143448
+          notes: ""
+          town: LONDON
+          postcode: SW1W 0PS
+          country: GB
+        StreetAddressDeprecated:
+          address: "39 BUCKINGHAM PALACE RD, LONDON, SW1W 0PS, GB"
+          name: 39 BUCKINGHAM PALACE RD
+          source: Address
+          lat: 51.498233
+          long: -0.143448
+          notes: ""
+          town: LONDON
+          postcode: SW1W 0PS
+          country: GB
+        AirportAddress:
+          street_address: "Heathrow Terminal 2, Heathrow Airport (LHR)"
+          source: Airport
+          lat: 51.469582
+          long: -0.449603
+          town: London
+          country: GB
+          postcode: TW6 2GW
+          airport:
+            iata: LHR
+            flight_number: BA1487
+            terminal: "2"
+            arrival_from: Paris
+        AirportAddressDeprecated:
+          address: "Heathrow Terminal 2, Heathrow Airport (LHR), Nelson Rd, Longford,\
+            \ Hounslow TW6 2GW, UK"
+          name: Heathrow Terminal 2
+          town: London
+          country: GB
+          postcode: TW6 2GW
+          source: Airport
+          lat: 51.469582
+          long: -0.449603
+          airport:
+            iata: LHR
+            flight_number: BA1487
+            terminal: "2"
+            arrival: Paris
+    type_9:
+      title: Service
+      required:
+      - code
+      type: object
+      properties:
+        code:
+          minLength: 1
+          type: string
+          description: Addison Lee service code
+      additionalProperties: true
+      example:
+        code: standard_car
+    type_10:
+      title: Contact
+      required:
+      - email
+      - mobile
+      - name
+      type: object
+      properties:
+        name:
+          minLength: 1
+          type: string
+          description: The name of the passenger
+        mobile:
+          type: string
+          description: Formatted mobile phone number.
+        email:
+          type: string
+          description: Formatted email address.
+      example:
+        name: John Doe
+        mobile: "07123456789"
+        email: john.doe@example.com
+    type_11:
+      title: InformationElement
+      required:
+      - type
+      type: object
+      properties:
+        type:
+          type: string
+          description: Type of extra information.
+        value:
+          type: string
+          description: The extra information.
+      description: Encapsulated information regards the extra information.
+    type_12:
+      title: ReferenceElement
+      required:
+      - name
+      - value
+      type: object
+      properties:
+        name:
+          type: string
+          description: Type reference type.
+        value:
+          type: string
+          description: The reference value.
+      description: Reference information element
+x-original-swagger-version: "2.0"

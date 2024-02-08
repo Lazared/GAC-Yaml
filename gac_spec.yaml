@@ -17,7 +17,10 @@ info:
 servers:
   - url: 'https://online.globalairportconcierge.com/'
     description: |
-    ## DO Prism Mock
+    ## Live Server
+  - url: 'https://mock.globalairportconcierge.com/'
+    description: |
+    ## Prism Mock
 paths:
   /bookings:
     get:

@@ -16,7 +16,8 @@ info:
     url: 'https://gac.com/api-license.html'
 servers:
   - url: 'https://online.globalairportconcierge.com/'
-    description: DO Prism Mock
+    description: |
+    ## DO Prism Mock
 paths:
   /bookings:
     get:

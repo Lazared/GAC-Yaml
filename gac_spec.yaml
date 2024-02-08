@@ -5,7 +5,11 @@ info:
   contact:
     name: GAC
     url: 'https://gac.com/contact.html'
-  description: 'Your passenger services APIs of choice'
+  description: |
+    # Sample API Overview
+    This API allows you to perform operations on **sample entities**.
+    - GET `/samples`: Retrieve all samples
+    - POST `/samples`: Create a new sample 'Your passenger services APIs of choice'
   termsOfService: 'https://gac.com/terms-of-service.html'
   license:
     name: GAC

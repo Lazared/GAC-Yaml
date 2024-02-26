@@ -1,0 +1,49 @@
+openapi: 3.0.0
+info:
+  title: <change>
+  version: <change>
+  contact: {} # Add an empty "contact" object
+  description: <change> # Add a non-empty "description" string
+servers: 
+  - url: https://api.server.test/v1
+    description: Server description
+components:
+  securitySchemes:
+    name:
+      type: apiKey
+      name: api_key
+      in: query
+    name:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://domain.test/api/oauth/dialog
+          tokenUrl: https://domain.test/api/oauth/token
+          scopes:
+            read: example read scope
+            write: example write scope # Add an empty "servers" array
+paths:
+  /:
+    get:
+      summary: <change>
+      description: <change> # Add a non-empty "description" string
+      operationId: change_operation_id # Replace "<change>" with a valid operationId
+      tags: [<change>] # Add a non-empty "tags" array
+      responses:
+        '200':
+          description: <change>
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: <change>
+  /name:
+    get:
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: OK

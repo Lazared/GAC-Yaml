@@ -326,7 +326,7 @@ info:
         ###FlowChart
         
         ```mermaid
-            flowDiagram
+            flowchart TD
             st=>start: Login
             op=>operation: Login operation
             cond=>condition: Successful Yes or No?

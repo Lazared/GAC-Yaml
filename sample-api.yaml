@@ -326,15 +326,12 @@ info:
         ###FlowChart
         
         ```mermaid
-            flowchart TD
-            st=>start: Login
-            op=>operation: Login operation
-            cond=>condition: Successful Yes or No?
-            e=>end: To admin
-            
-            st->op->cond
-            cond(yes)->e
-            cond(no)->op
+            flowchart LR
+                A[Christmas] -->|Get money| B(Go shopping)
+                B --> C{Let me think}
+                C -->|One| D[Laptop]
+                C -->|Two| E[iPhone]
+                C -->|Three| F[fa:fa-car Car]
         ```
         
         ###Sequence Diagram

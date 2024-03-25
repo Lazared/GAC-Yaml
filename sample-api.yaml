@@ -1,6 +1,6 @@
 openapi: "3.0.0"
 info:
-    title: "An Exmaple Simple OAS Specification"
+    title: "An Example Simple OAS Specification"
     version: "1.0.0"
     description: |
         #Sequence diagram for the API - dependencies
